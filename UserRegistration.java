@@ -45,7 +45,7 @@ public class UserRegistration {
     //uc5-password-minimum8
     static String passwordCheck(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("\nEnter password:\n(minimum 8 characters)\n");
+        System.out.println("\nEnter password:\n(minimum 8 characters and atleast one upperCase)\n");
         password = scan.nextLine();
         return password;
     }
@@ -96,14 +96,14 @@ public class UserRegistration {
         }
 
         //password check using regEx
-        boolean res5 = Pattern.matches("^[A-Z]?[a-zA-Z]{8,}", UserRegistration.passwordCheck());
+        boolean res5 = Pattern.matches("(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
     
+        //if false
         while(res5 == false){
             System.out.println("\nTry again!");
-            res5 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+            res5 = Pattern.matches("(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
         }
-        
 
         //if false
         while(res5 == false){
