@@ -45,7 +45,7 @@ public class UserRegistration {
     //uc5-password-minimum8
     static String passwordCheck(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("\nEnter password:\n(minimum 8 characters)\n");
+        System.out.println("\nEnter password:\n(minimum 8 characters and atleast one upperCase)\n");
         password = scan.nextLine();
         return password;
     }
@@ -54,6 +54,7 @@ public class UserRegistration {
     public static void main(String[] args) {
 
 		//first name check using regEx
+
         boolean res1 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.firstNameCheck());
         System.out.println(res1);
 
@@ -61,16 +62,17 @@ public class UserRegistration {
         while(res1 == false){
             System.out.println("Try again!");
             res1 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.firstNameCheck());
+
         }
 
 		//last name check using regEx
-        boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+        boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.lastNameCheck());
         System.out.println(res2);
 
 		//if false then try again
         while(res2 == false){
             System.out.println("\nTry again!");
-            res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+            res2 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.lastNameCheck());
         }
 
         //email check using regEx
@@ -94,14 +96,14 @@ public class UserRegistration {
         }
 
         //password check using regEx
-        boolean res5 = Pattern.matches("^[A-Z]?[a-zA-Z]{8,}", UserRegistration.passwordCheck());
+        boolean res5 = Pattern.matches("(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
     
+        //if false
         while(res5 == false){
             System.out.println("\nTry again!");
-            res5 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+            res5 = Pattern.matches("(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
         }
-        
 
 		//print statements
 		System.out.println("\nFirst Name: " + fName);
