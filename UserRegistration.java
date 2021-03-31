@@ -46,7 +46,7 @@ public class UserRegistration {
     static String passwordCheck(){
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nEnter password:\n(minimum 8 characters\natleast one upper case\natleast one numeric)\n");
+        System.out.println("\nEnter password:\n(minimum 8 characters\natleast one upper case\natleast one numeric\n exactly one special character)\n");
         password = scan.nextLine();
         return password;
     }
@@ -98,13 +98,13 @@ public class UserRegistration {
 
         //password check using regEx
 
-        boolean res5 = Pattern.matches("(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
+        boolean res5 = Pattern.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
     
         //if false
         while(res5 == false){
             System.out.println("\nTry again!");
-            res5 = Pattern.matches("(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}", UserRegistration.passwordCheck());
+            res5 = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}", UserRegistration.passwordCheck());
         }
 
       
