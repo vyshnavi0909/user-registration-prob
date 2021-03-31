@@ -1,11 +1,13 @@
 import java.util.Scanner;
 import java.util.regex.*;
 
+
 public class UserRegistration {
 
 	static String fName;
 	static String lName;
     static String email;
+    static String mobileNum;
 
     //uc1-first-name
     static String firstNameCheck(){
@@ -31,7 +33,15 @@ public class UserRegistration {
         return email;
     }
 
-	//main method
+    //uc4-mobile-phone
+    static String mobileNumCheck(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nEnter mobile number:\n(country code(91) follow by space and 10 digit mobile number)\n");
+        mobileNum = scan.nextLine();
+        return mobileNum;
+    }
+
+    //main method
     public static void main(String[] args) {
 
 		//checking first name
@@ -64,9 +74,20 @@ public class UserRegistration {
             res3 = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}", UserRegistration.emailCheck());
         }
 
+        //mobile number
+        boolean res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+        System.out.println(res4);
+
+        //if false
+        while(res4 == false){
+            System.out.println("\nTry again!");
+            res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+        }
+
 		//print statements
 		System.out.println("\nFirst Name: " + fName);
         System.out.println("\nLast Name: " + lName);
         System.out.println("\nEmail: " + email);
+        System.out.println("\nMobile number: " + mobileNum);
     }
 }
