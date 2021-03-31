@@ -54,53 +54,59 @@ public class UserRegistration {
     public static void main(String[] args) {
 
 		//first name check using regEx
-        // boolean res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
-        // System.out.println(res1);
+        boolean res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
+        System.out.println(res1);
 
 		// if false then try again
-        // while(res1 == false){
-        //     System.out.println("Try again!");
-        //     res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
-        // }
+        while(res1 == false){
+            System.out.println("Try again!");
+            res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
+        }
 
 		//last name check using regEx
-        // boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
-        // System.out.println(res2);
+        boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+        System.out.println(res2);
 
 		//if false then try again
-        // while(res2 == false){
-        //     System.out.println("\nTry again!");
-        //     res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
-        // }
+        while(res2 == false){
+            System.out.println("\nTry again!");
+            res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+        }
 
         //email check using regEx
-        // boolean res3 = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}", UserRegistration.emailCheck());
-        // System.out.println(res3);
+        boolean res3 = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}", UserRegistration.emailCheck());
+        System.out.println(res3);
 
         //if false trying again
-        // while(res3 == false){
-        //     System.out.println("\nTry again!");
-        //     res3 = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}", UserRegistration.emailCheck());
-        // }
+        while(res3 == false){
+            System.out.println("\nTry again!");
+            res3 = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}", UserRegistration.emailCheck());
+        }
 
         //mobile number check using regEx
-        // boolean res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
-        // System.out.println(res4);
+        boolean res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+        System.out.println(res4);
 
         //if false
-        // while(res4 == false){
-        //     System.out.println("\nTry again!");
-        //     res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
-        // }
+        while(res4 == false){
+            System.out.println("\nTry again!");
+            res4 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+        }
 
         //password check using regEx
         boolean res5 = Pattern.matches("^[A-Za-z]{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
 
+        //if false
+        while(res5 == false){
+            System.out.println("\nTry again!");
+            res5 = Pattern.matches("^[A-Za-z]{8,}", UserRegistration.passwordCheck());
+        }
+
 		//print statements
-		// System.out.println("\nFirst Name: " + fName);
-        // System.out.println("\nLast Name: " + lName);
-        // System.out.println("\nEmail: " + email);
-        // System.out.println("\nMobile number: " + mobileNum);
+		System.out.println("\nFirst Name: " + fName);
+        System.out.println("\nLast Name: " + lName);
+        System.out.println("\nEmail: " + email);
+        System.out.println("\nMobile number: " + mobileNum);
     }
 }
