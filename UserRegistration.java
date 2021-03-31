@@ -54,23 +54,25 @@ public class UserRegistration {
     public static void main(String[] args) {
 
 		//first name check using regEx
-        boolean res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
+
+        boolean res1 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.firstNameCheck());
         System.out.println(res1);
 
 		// if false then try again
         while(res1 == false){
             System.out.println("Try again!");
-            res1 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.firstNameCheck());
+            res1 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.firstNameCheck());
+
         }
 
 		//last name check using regEx
-        boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+        boolean res2 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.lastNameCheck());
         System.out.println(res2);
 
 		//if false then try again
         while(res2 == false){
             System.out.println("\nTry again!");
-            res2 = Pattern.matches("^[A-Z]{1}[a-z]{2}[a-z]*", UserRegistration.lastNameCheck());
+            res2 = Pattern.matches("^[A-Z]{1}[a-z]{2,}", UserRegistration.lastNameCheck());
         }
 
         //email check using regEx
@@ -94,8 +96,14 @@ public class UserRegistration {
         }
 
         //password check using regEx
-        boolean res5 = Pattern.matches("^[A-Za-z]{8,}", UserRegistration.passwordCheck());
+        boolean res5 = Pattern.matches("^[A-Z]?[a-zA-Z]{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
+    
+        while(res5 == false){
+            System.out.println("\nTry again!");
+            res5 = Pattern.matches("^[+91]+ [6-9]{1}[0-9]{9}", UserRegistration.mobileNumCheck());
+        }
+        
 
         //if false
         while(res5 == false){
