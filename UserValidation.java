@@ -46,4 +46,9 @@ public class UserValidator {
             return "SAD";
         }
     }
+
+	static boolean emailSamplesCheck(String a){
+        boolean resEmail = Pattern.matches("^(?!\\.)[a-zA-Z0-9]+([.+_-]?[0-9])*@[A-Za-z0-9]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$",a);
+        return resEmail;
+    }
 }
