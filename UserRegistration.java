@@ -51,6 +51,12 @@ public class UserRegistration {
         return password;
     }
 
+	//uc9-email-sample-checks
+	static void emailSamplesCheck(String a){
+		boolean resEmail = Pattern.matches("^(?!\\.)[a-zA-Z0-9]+([.+_-]?[0-9])*@[A-Za-z0-9]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$",a);
+		System.out.println(resEmail);
+	}
+
     //main method
     public static void main(String[] args) {
 
@@ -100,14 +106,39 @@ public class UserRegistration {
 
         boolean res5 = Pattern.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}", UserRegistration.passwordCheck());
         System.out.println(res5);
-    
+
         //if false
         while(res5 == false){
             System.out.println("\nTry again!");
             res5 = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}", UserRegistration.passwordCheck());
         }
 
-      
+			//Valid emails
+			emailSamplesCheck("abc@yahoo.com");
+			emailSamplesCheck("abc-100@yahoo.com");
+			emailSamplesCheck("abc.100@yahoo.com");
+			emailSamplesCheck("abc111@abc.com");
+			emailSamplesCheck("abc-100@abc.net");
+			emailSamplesCheck("abc.100@abc.com.au");
+			emailSamplesCheck("abc@1.com");
+			emailSamplesCheck("abc@gmail.com.com");
+			emailSamplesCheck("abc+100@gmail.com");
+            System.out.println("\n");
+			//Invalid emails
+			emailSamplesCheck("abc");
+			emailSamplesCheck("abc@.com.my");
+			emailSamplesCheck("abc123@gmail.a");
+			emailSamplesCheck("abc123@.com");
+			emailSamplesCheck("abc123@.com.com");
+			emailSamplesCheck(".abc@abc.com");
+			emailSamplesCheck("abc()*@gmail.com");
+			emailSamplesCheck("abc@%*.com");
+			emailSamplesCheck("abc..2002@gmail.com");
+			emailSamplesCheck("abc.@gmail.com");
+			emailSamplesCheck("abc@abc@gmail.com");
+			emailSamplesCheck("abc@gmail.com.1a");
+			emailSamplesCheck("abc@gmail.com.aa.au");
+
 
 		//print statements
 		System.out.println("\nFirst Name: " + fName);
