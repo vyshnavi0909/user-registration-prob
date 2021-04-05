@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class JunitAssertion {
     @Test
     void first_Name_Validation_When_Correct_Return_Happy(){
-        UserValidator firstName = new UserValidator();
+        UserValidation firstName = new UserValidation();
         String resFName = null;
         try {
             resFName = firstName.firstNameCheck("Vyshnavi");
@@ -18,7 +18,7 @@ public class JunitAssertion {
 
     @Test
     void first_Name_Validation_When_Fails_Return_Sad(){
-        UserValidator firstName = new UserValidator();
+        UserValidation firstName = new UserValidation();
         String resFName = null;
         try {
             resFName = firstName.firstNameCheck("vyshnavi");
@@ -32,7 +32,7 @@ public class JunitAssertion {
 
     @Test
     void last_Name_Validation_When_Correct_Return_Happy(){
-        UserValidator lastName = new UserValidator();
+        UserValidation lastName = new UserValidation();
         String resLName = null;
         try {
             resLName = lastName.lastNameCheck("Babbur");
@@ -45,7 +45,7 @@ public class JunitAssertion {
 
     @Test
     void last_Name_Validation_When_Fails_Return_Sad(){
-        UserValidator lastName = new UserValidator();
+        UserValidation lastName = new UserValidation();
         String resLName = null;
         try {
             resLName = lastName.lastNameCheck("babbur");
@@ -58,7 +58,7 @@ public class JunitAssertion {
 
     @Test
     void email_Validation_When_Correct_Return_Happy(){
-        UserValidator email = new UserValidator();
+        UserValidation email = new UserValidation();
         String resEmail = null;
         try {
             resEmail = email.emailCheck("abc.sss@bl.co.la");
@@ -71,7 +71,7 @@ public class JunitAssertion {
 
     @Test
     void email_Validation_When_Fails_Return_Sad(){
-        UserValidator email = new UserValidator();
+        UserValidation email = new UserValidation();
         String resEmail = null;
         try {
             resEmail = email.emailCheck("aba.sss@bl.cl.la");
@@ -85,7 +85,7 @@ public class JunitAssertion {
 
     @Test
     void mobile_Validation_When_Correct_Return_Happy() {
-        UserValidator mobNum = new UserValidator();
+        UserValidation mobNum = new UserValidation();
         String resPhNum = null;
         try {
             resPhNum = mobNum.mobileNumberCheck("+91 7200220022");
@@ -99,7 +99,7 @@ public class JunitAssertion {
 
     @Test
     void mobile_Validation_When_Fails_Return_Sad() {
-        UserValidator mobNum = new UserValidator();
+        UserValidation mobNum = new UserValidation();
         String resPhNum = null;
         try {
             resPhNum = mobNum.mobileNumberCheck("+91 2200220022");
@@ -113,7 +113,7 @@ public class JunitAssertion {
 
     @Test
     void password_Validation_When_Correct_Return_Happy(){
-        UserValidator password = new UserValidator();
+        UserValidation password = new UserValidation();
         String resPassword = null;
         try {
             resPassword = password.passwordCheck("BDS1@dsfd");
@@ -127,7 +127,7 @@ public class JunitAssertion {
 
     @Test
     void password_Validation_When_Fails_Return_Sad(){
-        UserValidator password = new UserValidator();
+        UserValidation password = new UserValidation();
         String resPassword = null;
         try {
             resPassword = password.passwordCheck("BDSdsfd");
