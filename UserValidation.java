@@ -1,5 +1,5 @@
 import java.util.regex.Pattern;
-public class UserValidator {
+public class UserValidation {
 
     static String firstNameCheck(String a) throws ValidationException{
         boolean name = Pattern.matches("^[A-Z]{1}[a-z]{2,}", a);
